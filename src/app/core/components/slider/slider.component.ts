@@ -1,17 +1,23 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'core-slider',
   standalone: true,
-  imports: [MatSliderModule],
+  imports: [MatSliderModule, FormsModule],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss'
 })
 export class SliderComponent {
 
   @Input()
-  public value: number = 0;
+  public sliderValue: number = 0;
+
+  // En nommant l'output avec "sliderValue" + "Change", l'utilisateur
+  // du composant va pouvoir effectuer du binding two way
+  @Output()
+  public sliderValueChange = new EventEmitter<number>();
 
   @Input()
   public min: number = 0;
@@ -22,8 +28,7 @@ export class SliderComponent {
   @Input()
   public showLabel: boolean = true;
 
-  @Output()
-  public valueChanged = new EventEmitter<number>();
+
 
 
 

@@ -14,4 +14,5 @@ import { BootstrapDemosComponent } from '../bootstrap-demos/bootstrap-demos.comp
 })
 export class ExercicesComponent {
 
+  public v1 = 10;
 }

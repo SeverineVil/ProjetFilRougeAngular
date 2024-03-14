@@ -1,10 +1,32 @@
 <hello-world></hello-world>
 
-<label #lbSlider1></label>
+<!-- <label #lbSlider1></label>
 <core-slider [min]="-100" [value]="80" [showLabel]="true"
-    (valueChanged)="lbSlider1.textContent = 'slider value = ' +$event"></core-slider>
-<core-slider [max]="50" [value]="40" [showLabel]="false"></core-slider>
-<core-progress-bar></core-progress-bar>
-<core-progress-bar></core-progress-bar>
-<core-progress-bar></core-progress-bar>
-<app-bootstrap-demos></app-bootstrap-demos>
+    (valueChange)="lbSlider1.textContent = 'slider value = ' +$event"></core-slider>
+
+<label>Slider value = {{ sliderValue }}</label>
+<core-slider [max]="50" [value]="40" [showLabel]="false" (valueChange)="sliderValue = $event"></core-slider>
+<hr> -->
+Slider value = {{ v1 }}
+
+
+<div class="d-flex gap-2 flex-column">
+    <!-- 
+        Exercice : Synchroniser les 3 sliders avec les 3 progress bar.
+        
+        1) Pouvoir récupérer la valeur du slider 
+           => afficher ici (dans le exercice component) la valeur du slider en temps réel
+
+        2) Redescendre la valeur du slider reçue à la progress bar
+    
+    -->
+    <core-slider [sliderValue]="v1" (sliderValueChange)="v1 = $event"></core-slider>
+    <core-progress-bar [progressValue]="v1"></core-progress-bar>
+    <core-slider></core-slider>
+    <core-slider></core-slider>
+    <core-slider></core-slider>
+    <core-progress-bar></core-progress-bar>
+    <core-progress-bar></core-progress-bar>
+    <core-progress-bar></core-progress-bar>
+</div>
+<!-- <app-bootstrap-demos></app-bootstrap-demos> -->
