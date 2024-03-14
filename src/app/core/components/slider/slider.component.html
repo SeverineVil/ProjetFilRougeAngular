@@ -1,3 +1,5 @@
-<mat-slider>
-    <input matSliderThumb>
+value = {{ value }}
+<mat-slider [discrete]="showLabel" [min]="min" [max]="max">
+    <!-- $event c'est le nom de la variable émise par l'output "valueChange" de l'input  -->
+    <input [value]="value" matSliderThumb (valueChange)="valueChanged.emit($event)">
 </mat-slider>

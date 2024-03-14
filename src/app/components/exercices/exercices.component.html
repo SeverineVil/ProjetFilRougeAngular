@@ -1,6 +1,9 @@
 <hello-world></hello-world>
-<core-slider></core-slider>
-<core-slider></core-slider>
+
+<label #lbSlider1></label>
+<core-slider [min]="-100" [value]="80" [showLabel]="true"
+    (valueChanged)="lbSlider1.textContent = 'slider value = ' +$event"></core-slider>
+<core-slider [max]="50" [value]="40" [showLabel]="false"></core-slider>
 <core-progress-bar></core-progress-bar>
 <core-progress-bar></core-progress-bar>
 <core-progress-bar></core-progress-bar>
