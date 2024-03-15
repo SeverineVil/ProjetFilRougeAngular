@@ -20,13 +20,14 @@ Slider value = {{ v1 }}
         2) Redescendre la valeur du slider reçue à la progress bar
     
     -->
+
     <core-slider [sliderValue]="v1" (sliderValueChange)="v1 = $event"></core-slider>
     <core-progress-bar [progressValue]="v1"></core-progress-bar>
-    <core-slider></core-slider>
-    <core-slider></core-slider>
-    <core-slider></core-slider>
-    <core-progress-bar></core-progress-bar>
-    <core-progress-bar></core-progress-bar>
-    <core-progress-bar></core-progress-bar>
+
+    <core-slider [(sliderValue)]="v2"></core-slider>
+    <core-progress-bar [progressValue]="v2"></core-progress-bar>
+
+    <core-slider [(sliderValue)]="v3"></core-slider>
+    <core-progress-bar [progressValue]="v3"></core-progress-bar>
 </div>
 <!-- <app-bootstrap-demos></app-bootstrap-demos> -->

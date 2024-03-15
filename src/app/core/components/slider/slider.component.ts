@@ -12,23 +12,43 @@ import { MatSliderModule } from '@angular/material/slider';
 export class SliderComponent {
 
   @Input()
-  public sliderValue: number = 0;
+  public sliderValue?: number; // = 0;
 
   // En nommant l'output avec "sliderValue" + "Change", l'utilisateur
   // du composant va pouvoir effectuer du binding two way
   @Output()
   public sliderValueChange = new EventEmitter<number>();
 
-  @Input()
-  public min: number = 0;
+  @Output()
+  public sliderHasBeenClicked = new EventEmitter<void>();
 
   @Input()
-  public max: number = 100;
+  public minSliderValue: number = 0;
+
+  @Input()
+  public maxSliderValue: number = 100;
 
   @Input()
   public showLabel: boolean = true;
 
+  /**
+   * Méthode appelée lorsque la valeur du mat-input change.
+   */
+  public sliderValueHasChanged(): void {
+    console.log('slider value has changed', this.sliderValue);
 
+    // émission de la valeur courante du slider
+    this.sliderValueChange.emit(this.sliderValue);
+  }
+
+  public sliderClicked(): void {
+    console.log('slider clicked');
+    this.sliderHasBeenClicked.emit();
+  }
+
+  public sliderMouseOvered(): void {
+    console.log('slider mouse over');
+  }
 
 
 

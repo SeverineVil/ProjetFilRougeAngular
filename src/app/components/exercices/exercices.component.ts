@@ -15,4 +15,14 @@ import { BootstrapDemosComponent } from '../bootstrap-demos/bootstrap-demos.comp
 export class ExercicesComponent {
 
   public v1 = 10;
+  public v2: number = 0;
+  public v3 = 0;
+
+  constructor() {
+    setInterval(() => {
+      this.v1 = Math.random() * 100;
+      this.v2 = Math.random() * 100;
+      this.v3 = Math.random() * 100;
+    }, 500);
+  }
 }
