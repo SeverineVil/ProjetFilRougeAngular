@@ -6,6 +6,7 @@ import { BootstrapDemosComponent } from '../bootstrap-demos/bootstrap-demos.comp
 import { AlertComponent } from '../../core/components/alert/alert.component';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-exercices',
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     ProgressBarComponent,
     BootstrapDemosComponent,
     AlertComponent,
+    FormsModule,
     NgbAlertModule,
     CommonModule],
   templateUrl: './exercices.component.html',
@@ -27,15 +29,36 @@ export class ExercicesComponent {
   public v2: number = 0;
   public v3 = 0;
 
+  // Tableau d'objets, qui ont une propriété "n" de type number
+  public values: { n: number }[] = Array(3);
+
+  public inputValue: string = '';
+
   constructor() {
+
+    // SetInterval sur le tableau
+    setInterval(() => {
+      this.setRandomValues();
+    }, 500);
+
+    this.setRandomValues()
+  }
+
+  private setRandomValues(): void {
+    // Boucle sur i allant de 0 juqu'à la taille du tableau
+    for (let i = 0; i < this.values.length; i++) {
+
+      // Mise à jour de la propriété "n" de l'élément à l'index "i"
+      this.values[i] = { n: Math.random() * 100 };
+    }
+  }
+
+  public alertWasClosed(): void {
     setInterval(() => {
       this.v1 = Math.random() * 100;
       this.v2 = Math.random() * 100;
       this.v3 = Math.random() * 100;
     }, 500);
-  }
-
-  public alertWasClosed(): void {
     console.log('alert was closed');
     alert('alert was closed!');
   }

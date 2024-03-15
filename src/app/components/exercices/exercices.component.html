@@ -15,8 +15,8 @@ Slider value = {{ v1 }}
     <!-- Affichage d'une alerte que si n > 2 -->
     <core-alert *ngIf="n > 2" [text]="'Div '+ n"></core-alert>
 </div>
-<input #i>
-<div [ngSwitch]="i.value">
+<input [(ngModel)]="inputValue">
+<div [ngSwitch]="inputValue">
     <div *ngSwitchCase="'hap' + 'py'">
         <core-alert color="success" text="Happy !"></core-alert>
     </div>
@@ -25,17 +25,8 @@ Slider value = {{ v1 }}
     <div *ngSwitchDefault>Ni sad ni happy.</div>
 </div>
 
-<input #toto>
-<div [ngSwitch]="toto.value">
-    <div *ngSwitchCase="'happy'">Happy</div>
-    <div *ngSwitchCase="'sad'">sad</div>
 
-
-    <div *ngSwitchDefault>po</div>
-
-
-</div>
-<div *ngIf="false" class="d-flex gap-2 flex-column">
+<div *ngIf="true" class="d-flex gap-2 flex-column">
     <!-- 
         Exercice : Synchroniser les 3 sliders avec les 3 progress bar.
         
@@ -45,6 +36,13 @@ Slider value = {{ v1 }}
         2) Redescendre la valeur du slider reçue à la progress bar
     
     -->
+
+    <!-- Parcours du tableau d'objet -->
+    <div *ngFor="let value of values">
+        <!-- Binding two way de la propriété "n" de l'objet "value" -->
+        <core-slider [(sliderValue)]="value.n"></core-slider>
+        <core-progress-bar [progressValue]="value.n"></core-progress-bar>
+    </div>
 
     <core-slider [sliderValue]="v1" (sliderValueChange)="v1 = $event"></core-slider>
     <core-progress-bar [progressValue]="v1"></core-progress-bar>
