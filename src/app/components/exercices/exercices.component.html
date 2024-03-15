@@ -29,5 +29,8 @@ Slider value = {{ v1 }}
 
     <core-slider [(sliderValue)]="v3"></core-slider>
     <core-progress-bar [progressValue]="v3"></core-progress-bar>
+
+    <core-alert [canBeClosed]="true" color="danger" text="Alerte 1"></core-alert>
+    <core-alert [canBeClosed]="true" [text]="'Alerte 2'" (alertClosed)="alertWasClosed()"></core-alert>
 </div>
 <!-- <app-bootstrap-demos></app-bootstrap-demos> -->

@@ -3,12 +3,15 @@ import { HelloWorldComponent } from '../hello-world/hello-world.component';
 import { SliderComponent } from '../../core/components/slider/slider.component';
 import { ProgressBarComponent } from '../../core/components/progress-bar/progress-bar.component';
 import { BootstrapDemosComponent } from '../bootstrap-demos/bootstrap-demos.component';
+import { AlertComponent } from '../../core/components/alert/alert.component';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-exercices',
   standalone: true,
   imports: [HelloWorldComponent, SliderComponent, ProgressBarComponent,
-    BootstrapDemosComponent],
+    BootstrapDemosComponent,
+    AlertComponent, NgbAlertModule],
   templateUrl: './exercices.component.html',
   styleUrl: './exercices.component.scss'
 })
@@ -24,5 +27,10 @@ export class ExercicesComponent {
       this.v2 = Math.random() * 100;
       this.v3 = Math.random() * 100;
     }, 500);
+  }
+
+  public alertWasClosed(): void {
+    console.log('alert was closed');
+    alert('alert was closed!');
   }
 }
