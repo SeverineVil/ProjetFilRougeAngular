@@ -9,8 +9,33 @@
 <hr> -->
 Slider value = {{ v1 }}
 
+<div *ngFor="let n of [1,2,3]" [class]="'class-'+ ((n%2 ==0) ? 'even': 'uneven')">
+    <input type="text" [value]="n">
+    Div {{ n }}
+    <!-- Affichage d'une alerte que si n > 2 -->
+    <core-alert *ngIf="n > 2" [text]="'Div '+ n"></core-alert>
+</div>
+<input #i>
+<div [ngSwitch]="i.value">
+    <div *ngSwitchCase="'hap' + 'py'">
+        <core-alert color="success" text="Happy !"></core-alert>
+    </div>
+    <div *ngSwitchCase="'sad'">Sad !</div>
+    <core-alert *ngSwitchCase="'neutral'" text="Neutre !"></core-alert>
+    <div *ngSwitchDefault>Ni sad ni happy.</div>
+</div>
 
-<div class="d-flex gap-2 flex-column">
+<input #toto>
+<div [ngSwitch]="toto.value">
+    <div *ngSwitchCase="'happy'">Happy</div>
+    <div *ngSwitchCase="'sad'">sad</div>
+
+
+    <div *ngSwitchDefault>po</div>
+
+
+</div>
+<div *ngIf="false" class="d-flex gap-2 flex-column">
     <!-- 
         Exercice : Synchroniser les 3 sliders avec les 3 progress bar.
         

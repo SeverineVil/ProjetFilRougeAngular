@@ -5,13 +5,19 @@ import { ProgressBarComponent } from '../../core/components/progress-bar/progres
 import { BootstrapDemosComponent } from '../bootstrap-demos/bootstrap-demos.component';
 import { AlertComponent } from '../../core/components/alert/alert.component';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-exercices',
   standalone: true,
-  imports: [HelloWorldComponent, SliderComponent, ProgressBarComponent,
+  imports: [
+    HelloWorldComponent,
+    SliderComponent,
+    ProgressBarComponent,
     BootstrapDemosComponent,
-    AlertComponent, NgbAlertModule],
+    AlertComponent,
+    NgbAlertModule,
+    CommonModule],
   templateUrl: './exercices.component.html',
   styleUrl: './exercices.component.scss'
 })
