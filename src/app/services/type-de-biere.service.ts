@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { TypeDeBiere } from '../entities/type-de-biere';
-import { max } from 'rxjs';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TypeDeBiereService {
 
+  private static readonly _typesDeBiereStorageKey = "TDB_KEY";
+
   /**
    * "Cache" des types de bière
    */
-  private _typesDeBiere: TypeDeBiere[];
+  private _typesDeBiere!: TypeDeBiere[];
 
-  private static _cpt = 0;
-
-  constructor() {
-    console.log('nouvelle instance de TypeDeBiereService');
-    this._typesDeBiere = [];
+  constructor(private storageService: StorageService) {
+    this.loadTypesDeBiere();
   }
 
   /**
@@ -42,6 +41,8 @@ export class TypeDeBiereService {
     // Le tableau contient l'objet type, il est automatiquement "mis à jour"
     type.id = maxId + 1;
 
+    this.saveTypesDeBiere();
+
     return true;
   }
 
@@ -58,6 +59,8 @@ export class TypeDeBiereService {
     }
 
     this._typesDeBiere[index] = type;
+
+    this.saveTypesDeBiere();
 
     return true;
   }
@@ -87,6 +90,8 @@ export class TypeDeBiereService {
 
     this._typesDeBiere.splice(index, 1);
 
+    this.saveTypesDeBiere();
+
     return true;
   }
 
@@ -98,4 +103,26 @@ export class TypeDeBiereService {
     return this._typesDeBiere;
   }
 
+  private loadTypesDeBiere(): void {
+    const types: string | null = this.storageService.get(TypeDeBiereService._typesDeBiereStorageKey);
+
+    try {
+
+      if (types != null) {
+        this._typesDeBiere = JSON.parse(types);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+
+      if (this._typesDeBiere == null) {
+        this._typesDeBiere = [];
+      }
+    }
+  }
+
+  private saveTypesDeBiere(): void {
+    const s: string = JSON.stringify(this._typesDeBiere);
+    this.storageService.set(TypeDeBiereService._typesDeBiereStorageKey, s);
+  }
 }
