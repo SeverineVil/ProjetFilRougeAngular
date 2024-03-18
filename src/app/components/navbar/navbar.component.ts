@@ -14,6 +14,7 @@ export class NavbarComponent {
 
   public menuRoutes: IMenuRoute[] = [
     { path: 'hello-world', libelle: 'Hello World' },
-    { path: 'exercices', libelle: 'Exercices' }
+    { path: 'exercices', libelle: 'Exercices' },
+    { path: 'types-de-biere', libelle: 'Types de bières' }
   ]
 }

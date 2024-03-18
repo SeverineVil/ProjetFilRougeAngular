@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TypeDeBiereService } from './services/type-de-biere.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'BrewApp';
+
+  constructor(typesDeBiereService: TypeDeBiereService) { }
 }
