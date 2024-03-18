@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TypeDeBiereService } from '../../services/type-de-biere.service';
+import { TypeDeBiere } from '../../entities/type-de-biere';
 
 @Component({
   selector: 'app-types-de-biere',
@@ -11,6 +12,7 @@ import { TypeDeBiereService } from '../../services/type-de-biere.service';
 export class TypesDeBiereComponent {
 
   constructor(private typeDeBiereService: TypeDeBiereService) {
-    typeDeBiereService.createTypeDeBiere()
+
+
   }
 }
