@@ -1,1 +1,30 @@
-<p>types-de-biere works!</p>
+<button type="button" class="btn btn-primary" routerLink="/create-type-de-biere">
+    <i class="fas fa-plus"></i> Nouveau type de bière
+</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Libellé</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let typeDeBiere of typesDeBiere">
+            <td>{{ typeDeBiere.id }}</td>
+            <td>{{ typeDeBiere.libelle }}</td>
+            <td>
+                <div class="d-flex flex-row flex-wrap gap-1">
+                    <button type="button" class="btn btn-sm btn-success"
+                        [routerLink]="'/update-type-de-biere/'+ typeDeBiere.id">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+                    <button disabled type="button" class="btn btn-sm btn-danger">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

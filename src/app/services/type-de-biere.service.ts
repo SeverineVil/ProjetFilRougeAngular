@@ -94,7 +94,7 @@ export class TypeDeBiereService {
     return this._typesDeBiere.find(t => t.id == id);
   }
 
-  public getTypesDeBiere(): TypeDeBiere[] {
+  public getAllTypesDeBiere(): TypeDeBiere[] {
     return this._typesDeBiere;
   }
 

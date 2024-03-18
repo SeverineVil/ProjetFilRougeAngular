@@ -1,0 +1,11 @@
+<h1>{{ isInCreation ? 'Nouveau type de bière':'Modification du type de bière' }}</h1>
+<form class="default-form" (ngSubmit)="saveForm()">
+    <div class="form-group">
+        <label for="libelle">Libellé</label>
+        <input class="form-control" id="libelle" type="text" name="libelle" placeholder="Le nom.."
+            [(ngModel)]="typeDeBiere.libelle">
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-success">{{ isInCreation ? 'Créer' : 'Mettre à jour'}}</button>
+    </div>
+</form>
