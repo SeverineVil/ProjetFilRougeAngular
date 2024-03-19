@@ -7,6 +7,7 @@ import { AlertComponent } from '../../core/components/alert/alert.component';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HighLightDirective } from '../../directives/high-light.directive';
 
 @Component({
   selector: 'app-exercices',
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AlertComponent,
     FormsModule,
     NgbAlertModule,
-    CommonModule],
+    CommonModule,
+    HighLightDirective],
   templateUrl: './exercices.component.html',
   styleUrl: './exercices.component.scss'
 })

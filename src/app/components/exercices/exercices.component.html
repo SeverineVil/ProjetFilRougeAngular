@@ -3,6 +3,8 @@
 <label [ngClass]="{ 'red': inputValue == 'red', 'yellow': inputValue == 'yellow'}" [class.green]="inputValue == 'green'"
     [ngStyle]="{'color': inputValue}">Test de ngStyle</label>
 
+
+
 <!-- <label #lbSlider1></label>
 <core-slider [min]="-100" [value]="80" [showLabel]="true"
     (valueChange)="lbSlider1.textContent = 'slider value = ' +$event"></core-slider>
@@ -12,14 +14,14 @@
 <hr> -->
 Slider value = {{ v1 }}
 
-<div *ngFor="let n of [1,2,3]" [ngClass]="'class-'+ ((n%2 ==0) ? 'even': 'uneven')">
+<div appHighLight *ngFor="let n of [1,2,3]" [ngClass]="'class-'+ ((n%2 ==0) ? 'even': 'uneven')">
     <input type="text" [value]="n">
     Div {{ n }}
     <!-- Affichage d'une alerte que si n > 2 -->
     <core-alert *ngIf="n > 2" [text]="'Div '+ n"></core-alert>
 </div>
 <input [(ngModel)]="inputValue">
-<div [ngSwitch]="inputValue">
+<div [appHighLight]="'red'" [ngSwitch]="inputValue">
     <div *ngSwitchCase="'hap' + 'py'">
         <core-alert color="success" text="Happy !"></core-alert>
     </div>
