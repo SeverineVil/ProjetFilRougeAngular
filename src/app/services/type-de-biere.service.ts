@@ -109,7 +109,16 @@ export class TypeDeBiereService {
     try {
 
       if (types != null) {
-        this._typesDeBiere = JSON.parse(types);
+        const tempTypes: any[] = JSON.parse(types);
+
+        this._typesDeBiere = tempTypes.map(t => {
+          const type = new TypeDeBiere();
+
+          // Copie des propriétés de "t" dans "type"
+          Object.assign(type, t);
+
+          return type;
+        });
       }
     } catch (e) {
       console.error(e);
