@@ -20,7 +20,9 @@
                         [routerLink]="'/update-type-de-biere/'+ typeDeBiere.id">
                         <i class="fas fa-edit"></i> Modifier
                     </button>
-                    <button (click)="delete(typeDeBiere)" type="button" class="btn btn-sm btn-danger">
+                    <button coreConfirm [header]="'Suppression du type de bière'"
+                        [body]="'Etes-vous sûr de vous sûr de vouloir supprimer ce type de bière ?'"
+                        (confirmClicked)="delete(typeDeBiere)" type="button" class="btn btn-sm btn-danger">
                         <i class="fas fa-trash"></i> Supprimer
                     </button>
                 </div>
