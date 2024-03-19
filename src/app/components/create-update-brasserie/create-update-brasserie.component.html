@@ -14,6 +14,15 @@
     <div class="form-group">
         <label for="pays">Pays</label>
         <input formControlName="pays" id="pays" placeholder="Pays.." class="form-control">
+
+        <ng-container *ngIf="formGroup.controls['pays'] as pays">
+            <small *ngIf="pays.touched && pays.errors && pays.errors['minlength']" class="text-danger">
+                Taille minimun requise : {{ pays.errors['minlength']['requiredLength'] }}
+            </small>
+            <small *ngIf="pays.touched && pays.errors && pays.errors['maxlength']" class="text-danger">
+                Taille maximum requise : {{ pays.errors['maxlength']['requiredLength'] }}
+            </small>
+        </ng-container>
     </div>
     <div class="mt-3">
         <button type="submit" class="btn btn-primary">Enregistrer</button>
