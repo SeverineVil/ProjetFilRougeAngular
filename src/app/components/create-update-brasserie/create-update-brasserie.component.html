@@ -1,14 +1,21 @@
 <h1>{{ isInCreation ? 'Nouvelle brasserie':'Modification de la brasserie' }}</h1>
 <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formValidation()">
+    <core-alert *ngIf="submitted && formGroup.invalid" color="danger" text="Formulaire invalide"></core-alert>
     <div class="form-group">
-        <label for="libelle">Nom</label>
+        <label for="libelle">Nom*</label>
         <input formControlName="libelle" id="libelle" placeholder="Nom.." class="form-control">
+
+        <ng-container *ngIf="formGroup.controls['libelle'] as libelle">
+            <small *ngIf="libelle.touched && libelle.errors && libelle.errors['required']" class="text-danger">
+                Nom obligatoire
+            </small>
+        </ng-container>
     </div>
     <div class="form-group">
         <label for="pays">Pays</label>
         <input formControlName="pays" id="pays" placeholder="Pays.." class="form-control">
     </div>
-    <div>
+    <div class="mt-3">
         <button type="submit" class="btn btn-primary">Enregistrer</button>
     </div>
 </form>
