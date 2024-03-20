@@ -35,7 +35,7 @@ Slider value = {{ v1 }}
     </div>
     <div *ngSwitchCase="'sad'">Sad !</div>
     <core-alert *ngSwitchCase="'neutral'" text="Neutre !"></core-alert>
-    <div *ngSwitchDefault>Ni sad ni happy.</div>
+    <div *ngSwitchDefault>{{ 'Ni sad ni happy.' | majusculeUneSurX:4 }}</div>
 </div>
 
 

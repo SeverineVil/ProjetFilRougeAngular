@@ -8,6 +8,7 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HighLightDirective } from '../../directives/high-light.directive';
+import { MajusculeUneSurXPipe } from '../../pipes/majuscule-une-sur-x.pipe';
 
 @Component({
   selector: 'app-exercices',
@@ -21,7 +22,8 @@ import { HighLightDirective } from '../../directives/high-light.directive';
     FormsModule,
     NgbAlertModule,
     CommonModule,
-    HighLightDirective],
+    HighLightDirective,
+    MajusculeUneSurXPipe],
   templateUrl: './exercices.component.html',
   styleUrl: './exercices.component.scss'
 })

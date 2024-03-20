@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { TypeDeBiereService } from './type-de-biere.service';
 import { TypeDeBiere } from '../entities/type-de-biere';
 
-fdescribe('TypeDeBiereService', () => {
+describe('TypeDeBiereService', () => {
   let service: TypeDeBiereService;
 
   beforeEach(() => {
