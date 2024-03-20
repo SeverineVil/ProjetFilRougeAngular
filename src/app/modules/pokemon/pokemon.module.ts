@@ -4,6 +4,8 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { FichePokemonComponent } from './components/fiche-pokemon/fiche-pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonAPIService } from './services/pokemon-api.service';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertComponent } from '../../core/components/alert/alert.component';
 
 @NgModule({
   declarations: [PokedexComponent, FichePokemonComponent],
@@ -12,7 +14,9 @@ import { PokemonAPIService } from './services/pokemon-api.service';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbTooltipModule,
+    AlertComponent
   ],
   providers: [
     PokemonAPIService

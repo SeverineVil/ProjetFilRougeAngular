@@ -1,10 +1,26 @@
-<ng-container *ngIf="pokemons$ | async as pokemons">
+<ng-container *ngIf="pokemons$ | async as pokemons else loading">
     {{ pokemons.length }} pokémon(s) trouvé(s)
     <div class="d-flex flex-row flex-wrap gap-2 m-2">
-        <div class="pokemon-tile" *ngFor="let pokemon of pokemons">
-            <label>N°{{ pokemon.id }}</label>
+        <div class="pokemon-tile shadow btn btn-secondary" *ngFor="let pokemon of pokemons">
+            <label class="identifier small">N°{{ pokemon.id }}</label>
             <img class="img-fluid" [src]="pokemon.image">
-            <label>{{ pokemon.name }}</label>
+            <label class="fw-bold">{{ pokemon.name }}</label>
+            <div class="d-flex flex-row flex-wrap gap-2 mt-2">
+                <div [ngbTooltip]="type.name" *ngFor="let type of pokemon.apiTypes">
+                    <img [src]="type.image" class="img-fluid img-type">
+                </div>
+            </div>
         </div>
     </div>
 </ng-container>
+<ng-template #loading>
+    <core-alert text="" [beforeTextTemplate]="spinner"></core-alert>
+</ng-template>
+<ng-template #spinner>
+    <div class="d-flex align-items-center">
+        <div class="spinner-border text-primary me-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Chargement en cours..
+    </div>
+</ng-template>
