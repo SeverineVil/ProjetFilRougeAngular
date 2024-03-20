@@ -10,9 +10,15 @@ import { Pokemons } from '../../entities/pokemon';
 })
 export class PokedexComponent {
 
-  public pokemons$: Observable<Pokemons>;
+  public search?: string;
+
+  public pokemons$!: Observable<Pokemons>;
 
   constructor(private pokemonAPIService: PokemonAPIService) {
-    this.pokemons$ = pokemonAPIService.getAllPokemons();
+    this.refreshPokemons();
+  }
+
+  public refreshPokemons(): void {
+    this.pokemons$ = this.pokemonAPIService.getAllPokemons(this.search);
   }
 }

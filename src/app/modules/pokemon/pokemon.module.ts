@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonAPIService } from './services/pokemon-api.service';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertComponent } from '../../core/components/alert/alert.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PokedexComponent, FichePokemonComponent],
@@ -16,7 +17,8 @@ import { AlertComponent } from '../../core/components/alert/alert.component';
     CommonModule,
     HttpClientModule,
     NgbTooltipModule,
-    AlertComponent
+    AlertComponent,
+    FormsModule
   ],
   providers: [
     PokemonAPIService
