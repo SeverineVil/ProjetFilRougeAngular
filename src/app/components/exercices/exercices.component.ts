@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HighLightDirective } from '../../directives/high-light.directive';
 import { MajusculeUneSurXPipe } from '../../pipes/majuscule-une-sur-x.pipe';
+import { PokemonModule } from '../../modules/pokemon/pokemon.module';
 
 @Component({
   selector: 'app-exercices',
@@ -23,7 +24,8 @@ import { MajusculeUneSurXPipe } from '../../pipes/majuscule-une-sur-x.pipe';
     NgbAlertModule,
     CommonModule,
     HighLightDirective,
-    MajusculeUneSurXPipe],
+    MajusculeUneSurXPipe,
+    PokemonModule],
   templateUrl: './exercices.component.html',
   styleUrl: './exercices.component.scss'
 })

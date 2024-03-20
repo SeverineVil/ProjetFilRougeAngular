@@ -16,6 +16,7 @@ export class NavbarComponent {
     { path: 'hello-world', libelle: 'Hello World' },
     { path: 'exercices', libelle: 'Exercices' },
     { path: 'types-de-biere', libelle: 'Types de bières' },
-    { path: 'brasseries', libelle: 'Brasseries' }
+    { path: 'brasseries', libelle: 'Brasseries' },
+    { path: 'pokedex', libelle: 'Pokédex' }
   ]
 }
