@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HighLightDirective } from '../../directives/high-light.directive';
 import { MajusculeUneSurXPipe } from '../../pipes/majuscule-une-sur-x.pipe';
 import { PokemonModule } from '../../modules/pokemon/pokemon.module';
+import { Observable, delay, of } from 'rxjs';
 
 @Component({
   selector: 'app-exercices',
@@ -42,7 +43,15 @@ export class ExercicesComponent {
 
   public inputValue: string = '';
 
+  public michel$: Observable<string> = of('Michel').pipe(
+    delay(1000)
+  );
+
   constructor() {
+
+    this.michel$.subscribe(s => console.log('Michel ?', s));
+
+    console.log('After subscribe');
 
     // SetInterval sur le tableau
     setInterval(() => {

@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MajusculeUneSurXPipe implements PipeTransform {
 
-  transform(value: string | undefined, ...args: number[]): string | undefined {
-    if (value == undefined) {
+  transform(value: string | null, ...args: number[]): string | undefined {
+    if (value == null) {
       return undefined;
     }
 

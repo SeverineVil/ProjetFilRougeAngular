@@ -1,1 +1,10 @@
-<p>pokedex works!</p>
+<ng-container *ngIf="pokemons$ | async as pokemons">
+    {{ pokemons.length }} pokémon(s) trouvé(s)
+    <div class="d-flex flex-row flex-wrap gap-2 m-2">
+        <div class="pokemon-tile" *ngFor="let pokemon of pokemons">
+            <label>N°{{ pokemon.id }}</label>
+            <img class="img-fluid" [src]="pokemon.image">
+            <label>{{ pokemon.name }}</label>
+        </div>
+    </div>
+</ng-container>
