@@ -1,5 +1,13 @@
 <hello-world></hello-world>
 
+<div *ngIf="loading == false else loadingTemplate">
+    <core-alert text="Données chargées" [beforeTextTemplate]="icon" [afterTextTemplate]="icon">
+    </core-alert>
+</div>
+<ng-template #icon let-data>
+    <i class="fas fa-money-check"></i> {{ data | json }}
+</ng-template>
+
 <label [ngClass]="{ 'red': inputValue == 'red', 'yellow': inputValue == 'yellow'}" [class.green]="inputValue == 'green'"
     [ngStyle]="{'color': inputValue}">Test de ngStyle</label>
 
@@ -62,3 +70,7 @@ Slider value = {{ v1 }}
     <core-alert [canBeClosed]="true" [text]="'Alerte 2'" (alertClosed)="alertWasClosed()"></core-alert>
 </div>
 <!-- <app-bootstrap-demos></app-bootstrap-demos> -->
+
+<ng-template #loadingTemplate>
+    <core-alert color="info" text="Chargement en cours.."></core-alert>
+</ng-template>

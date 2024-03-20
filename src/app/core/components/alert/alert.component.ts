@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'core-alert',
   standalone: true,
-  imports: [NgbAlertModule],
+  imports: [NgbAlertModule, CommonModule],
   templateUrl: './alert.component.html',
   styleUrl: './alert.component.scss'
 })
@@ -21,6 +22,12 @@ export class AlertComponent {
 
   @Output()
   public alertClosed = new EventEmitter<void>();
+
+  @Input()
+  public beforeTextTemplate?: TemplateRef<any>;
+
+  @Input()
+  public afterTextTemplate?: TemplateRef<any>;
 
   public emitCloseEvent(): void {
     console.log('alert was closed');

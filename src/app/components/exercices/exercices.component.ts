@@ -31,6 +31,8 @@ export class ExercicesComponent {
   public v2: number = 0;
   public v3 = 0;
 
+  public loading: boolean = true;
+
   // Tableau d'objets, qui ont une propriété "n" de type number
   public values: { n: number }[] = Array(3);
 
@@ -44,6 +46,10 @@ export class ExercicesComponent {
     }, 500);
 
     this.setRandomValues()
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 5000);
   }
 
   private setRandomValues(): void {
