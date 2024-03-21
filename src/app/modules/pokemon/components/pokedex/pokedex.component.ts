@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { PokemonAPIService } from '../../services/pokemon-api.service';
 import { Observable } from 'rxjs';
 import { Pokemons } from '../../entities/pokemon';

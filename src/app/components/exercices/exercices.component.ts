@@ -11,6 +11,7 @@ import { HighLightDirective } from '../../directives/high-light.directive';
 import { MajusculeUneSurXPipe } from '../../pipes/majuscule-une-sur-x.pipe';
 import { PokemonModule } from '../../modules/pokemon/pokemon.module';
 import { Observable, delay, of } from 'rxjs';
+import { NewStructuralDirectivesComponent } from '../new-structural-directives/new-structural-directives.component';
 
 @Component({
   selector: 'app-exercices',

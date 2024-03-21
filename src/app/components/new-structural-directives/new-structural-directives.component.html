@@ -1,0 +1,42 @@
+<!-- If/else -->
+<div>
+    <div>
+        <input type="checkbox" [(ngModel)]="booleanValue"> Toggle boolean value
+    </div>
+
+    @if(booleanValue){
+    Checkbox = true
+    }@else {
+    Checkbox = false
+    }
+</div>
+
+<!-- Foreach -->
+<div>
+    <div>
+        <input type="text" placeholder="New value" [(ngModel)]="newValue">
+        <button [disabled]="!newValue" type="button" (click)="addValue()">Add</button>
+    </div>
+    <ul>
+        @for (value of values; track $index) {
+        <li>{{value}} <button type="button" (click)="removeValue($index)">Remove</button></li>
+        }
+        @empty {
+        <li>Aucune valeur</li>
+        }
+    </ul>
+</div>
+
+<!-- Switch -->
+<input type="text" [(ngModel)]="switchValue">
+@switch (switchValue) {
+@case ("toto") {
+Toto !!!
+}
+@case ("titi") {
+Titi !!
+}
+@default {
+Ni toto, ni titi!
+}
+}

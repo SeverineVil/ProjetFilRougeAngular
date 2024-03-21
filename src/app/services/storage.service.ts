@@ -16,4 +16,8 @@ export class StorageService {
 
     return true;
   }
+
+  public delete(name: string): void {
+    localStorage.removeItem(name);
+  }
 }
