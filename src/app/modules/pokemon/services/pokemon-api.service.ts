@@ -1,39 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
-import { CacheService } from '../../../services/cache.service';
 import { Pokemon, Pokemons } from '../entities/pokemon';
 
 @Injectable()
 export class PokemonAPIService {
 
-  private static readonly _pokemonsStorageKey = "POKEMONS_KEY";
-
-  constructor(private httpClient: HttpClient, private cacheService: CacheService) { }
+  constructor(private httpClient: HttpClient) { }
 
   public getAllPokemons(search?: string): Observable<Pokemons> {
 
-    return this.cacheService.getFromCacheOrLoadIfNotExists(
-      PokemonAPIService._pokemonsStorageKey,
-      () => this.httpClient.get<Pokemons>('https://pokebuildapi.fr/api/v1/pokemon')).pipe(
-        map((pokemons: Pokemons | null) => {
+    return this.httpClient.get<Pokemons>('https://pokebuildapi.fr/api/v1/pokemon/').pipe(
+      map((pokemons: Pokemons | null) => {
 
-          if (pokemons == null) {
-            return [];
-          }
+        if (pokemons == null) {
+          return [];
+        }
 
-          return pokemons.filter(p => this.doesPokemonMatch(p, search))
-        }),
-        map((pokemonsFiltres: Pokemons) => {
-          console.log('pokémons filtrés', pokemonsFiltres);
-          return pokemonsFiltres;
-        }),
-        catchError(e => {
-          console.error(e);
+        return pokemons.filter(p => this.doesPokemonMatch(p, search))
+      }),
+      map((pokemonsFiltres: Pokemons) => {
+        console.log('pokémons filtrés', pokemonsFiltres);
+        return pokemonsFiltres;
+      }),
+      catchError(e => {
+        console.error(e);
 
-          return of([]);
-        })
-      )
+        return of([]);
+      })
+    )
   }
 
   private doesPokemonMatch(pokemon: Pokemon, search?: string): boolean {

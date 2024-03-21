@@ -54,7 +54,6 @@ export class CacheService {
       this.storageService.delete(key);
       return null;
     }
-
   }
 
   private saveInStorageIfNotExists<T>(key: string, data: T): void {

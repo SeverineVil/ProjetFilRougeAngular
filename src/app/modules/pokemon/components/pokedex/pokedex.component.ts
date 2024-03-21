@@ -1,7 +1,10 @@
 import { Component, Injector } from '@angular/core';
 import { PokemonAPIService } from '../../services/pokemon-api.service';
 import { Observable } from 'rxjs';
-import { Pokemons } from '../../entities/pokemon';
+import { Pokemon, Pokemons } from '../../entities/pokemon';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { FichePokemonComponent } from '../fiche-pokemon/fiche-pokemon.component';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokedex',
@@ -14,11 +17,17 @@ export class PokedexComponent {
 
   public pokemons$!: Observable<Pokemons>;
 
-  constructor(private pokemonAPIService: PokemonAPIService) {
+  constructor(private pokemonService: PokemonService, private ngbModal: NgbModal) {
     this.refreshPokemons();
   }
 
   public refreshPokemons(): void {
-    this.pokemons$ = this.pokemonAPIService.getAllPokemons(this.search);
+    this.pokemons$ = this.pokemonService.getAllPokemons(this.search);
+  }
+
+  public selectPokemon(pokemon: Pokemon): void {
+    this.pokemonService.currentPokemon = pokemon;
+
+    this.ngbModal.open(FichePokemonComponent);
   }
 }

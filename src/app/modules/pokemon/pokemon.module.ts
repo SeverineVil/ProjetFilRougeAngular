@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PokedexComponent } from './components/pokedex/pokedex.component';
-import { FichePokemonComponent } from './components/fiche-pokemon/fiche-pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PokemonAPIService } from './services/pokemon-api.service';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { AlertComponent } from '../../core/components/alert/alert.component';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertComponent } from '../../core/components/alert/alert.component';
+import { FichePokemonComponent } from './components/fiche-pokemon/fiche-pokemon.component';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { PokemonAPIService } from './services/pokemon-api.service';
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [PokedexComponent, FichePokemonComponent],
@@ -18,9 +19,11 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NgbTooltipModule,
     AlertComponent,
-    FormsModule
+    FormsModule,
+    NgbModalModule
   ],
   providers: [
+    PokemonService,
     PokemonAPIService
   ]
 })

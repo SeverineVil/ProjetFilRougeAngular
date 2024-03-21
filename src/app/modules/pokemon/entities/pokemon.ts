@@ -15,6 +15,8 @@ export interface Pokemon {
     apiEvolutions: ApiEvolution[]
     apiPreEvolution: any
     apiResistancesWithAbilities: ApiResistancesWithAbility[]
+
+    selected?: boolean;
 }
 
 export interface Stats {
