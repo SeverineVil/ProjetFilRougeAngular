@@ -8,6 +8,8 @@ export class PokemonAPIService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+
   public getAllPokemons(search?: string): Observable<Pokemons> {
 
     return this.httpClient.get<Pokemons>('https://pokebuildapi.fr/api/v1/pokemon/').pipe(
@@ -21,12 +23,25 @@ export class PokemonAPIService {
       }),
       map((pokemonsFiltres: Pokemons) => {
         console.log('pokémons filtrés', pokemonsFiltres);
+
+        pokemonsFiltres.forEach(p => p.cry$ = this.getPokemonCry(p));
+
         return pokemonsFiltres;
       }),
       catchError(e => {
         console.error(e);
 
         return of([]);
+      })
+    )
+  }
+
+  private getPokemonCry(pokemon: Pokemon): Observable<string | null> {
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.id}`).pipe(
+      map((poke: any) => poke.cries.latest),
+      catchError(e => {
+        console.error(e);
+        return of(null)
       })
     )
   }

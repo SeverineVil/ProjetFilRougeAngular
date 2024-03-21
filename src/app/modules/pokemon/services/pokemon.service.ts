@@ -13,19 +13,19 @@ export class PokemonService {
   public set currentPokemon(value: Pokemon) {
     this._currentPokemon = value;
 
-    if (this.allPokemons) {
-      this.allPokemons.forEach(p => p.selected = false);
+    if (this._allPokemons) {
+      this._allPokemons.forEach(p => p.selected = false);
     }
 
     if (this._currentPokemon != undefined) {
       this._currentPokemon.selected = true;
     }
   }
-  private allPokemons?: Pokemons;
-  private allFilteredPokemons?: Pokemons;
+  private _allPokemons?: Pokemons;
+  private _allFilteredPokemons?: Pokemons;
 
   public get displayedPokemons(): Pokemons {
-    return this.allFilteredPokemons || this.allPokemons || [];
+    return this._allFilteredPokemons || this._allPokemons || [];
   }
 
   constructor(private pokemonAPIService: PokemonAPIService) { }
@@ -69,10 +69,10 @@ export class PokemonService {
     return this.pokemonAPIService.getAllPokemons(search).pipe(
       map((pokemons: Pokemons) => {
         if (search == null) {
-          this.allPokemons = pokemons;
-          this.allFilteredPokemons = undefined;
+          this._allPokemons = pokemons;
+          this._allFilteredPokemons = undefined;
         } else {
-          this.allFilteredPokemons = pokemons;
+          this._allFilteredPokemons = pokemons;
         }
 
         return pokemons;

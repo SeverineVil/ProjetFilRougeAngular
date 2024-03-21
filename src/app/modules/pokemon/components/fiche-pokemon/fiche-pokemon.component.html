@@ -1,4 +1,5 @@
 <ng-container *ngIf="pokemon">
+    <audio [src]="pokemon.cry$ | async" autoplay></audio>
     <h1 class="text-center">
         <button type="button" class="btn" (click)="previous()">
             <i class="fas fa-circle-arrow-left fa-2x"></i>

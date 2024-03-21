@@ -1,3 +1,5 @@
+import { Observable } from "rxjs"
+
 export type Pokemons = Pokemon[]
 
 export interface Pokemon {
@@ -17,6 +19,7 @@ export interface Pokemon {
     apiResistancesWithAbilities: ApiResistancesWithAbility[]
 
     selected?: boolean;
+    cry$?: Observable<string | null>;
 }
 
 export interface Stats {
