@@ -8,6 +8,7 @@ import { FichePokemonComponent } from './components/fiche-pokemon/fiche-pokemon.
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { PokemonAPIService } from './services/pokemon-api.service';
 import { PokemonService } from './services/pokemon.service';
+import { PokemonRoutingModule } from './pokemon-routing.module';
 
 @NgModule({
   declarations: [PokedexComponent, FichePokemonComponent],
@@ -20,7 +21,8 @@ import { PokemonService } from './services/pokemon.service';
     NgbTooltipModule,
     AlertComponent,
     FormsModule,
-    NgbModalModule
+    NgbModalModule,
+    PokemonRoutingModule
   ],
   providers: [
     PokemonService,
