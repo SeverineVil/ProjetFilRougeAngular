@@ -1,0 +1,11 @@
+<h1>Nouvelle bière :</h1>
+@if (biere) {
+<form (ngSubmit)="submit()" class="d-flex flex-column">
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input name="libelle" matInput [(ngModel)]="biere.libelle" placeholder="Nom de la bière..">
+    </mat-form-field>
+
+    <button mat-button color="accent">Enregistrer</button>
+</form>
+}
