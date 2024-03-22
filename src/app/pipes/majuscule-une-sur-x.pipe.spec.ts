@@ -14,7 +14,7 @@ describe('MajusculeUneSurXPipe', () => {
   })
 
   it('undefined is managed', () => {
-    expect(pipe.transform(undefined)).toBeUndefined();
+    expect(pipe.transform(null)).toBeUndefined();
   })
 
   it('Une majuscule sur trois fonctionne', () => {

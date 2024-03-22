@@ -1,4 +1,5 @@
-export class TypeDeBiere {
-    public id?: number;
+import { BaseEntity } from "./base-entity";
+
+export class TypeDeBiere extends BaseEntity {
     public libelle?: string;
 }

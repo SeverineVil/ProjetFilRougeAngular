@@ -18,6 +18,7 @@ export class NavbarComponent {
     { path: 'types-de-biere', libelle: 'Types de bières' },
     { path: 'brasseries', libelle: 'Brasseries' },
     { path: 'pokedex', libelle: 'Pokédex' },
-    { path: 'angular-17-features', libelle: 'Angular 17 features' }
+    { path: 'angular-17-features', libelle: 'Angular 17 features' },
+    { path: 'bieres', libelle: 'Bières' }
   ]
 }

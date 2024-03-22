@@ -20,5 +20,9 @@ export const routes: Routes = [
         path: 'pokedex', loadChildren: () =>
             import('./modules/pokemon/pokemon.module').then(f => f.PokemonModule)
     },
-    { path: 'angular-17-features', component: NewStructuralDirectivesComponent }
+    { path: 'angular-17-features', component: NewStructuralDirectivesComponent },
+    {
+        path: 'bieres', loadComponent:
+            () => import('./components/bieres/bieres.component').then(f => f.BieresComponent)
+    }
 ];

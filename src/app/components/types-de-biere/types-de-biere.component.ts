@@ -18,10 +18,10 @@ export class TypesDeBiereComponent {
   public typesDeBiere: TypeDeBiere[];
 
   constructor(private typeDeBiereService: TypeDeBiereService) {
-    this.typesDeBiere = typeDeBiereService.getAllTypesDeBiere();
+    this.typesDeBiere = typeDeBiereService.getAllItems();
   }
 
   public delete(typeDeBiere: TypeDeBiere): void {
-    this.typeDeBiereService.deleteTypeDeBiere(typeDeBiere);
+    this.typeDeBiereService.delete(typeDeBiere);
   }
 }

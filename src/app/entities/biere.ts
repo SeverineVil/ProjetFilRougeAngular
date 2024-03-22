@@ -1,8 +1,8 @@
+import { BaseEntity } from "./base-entity";
 import { Brasserie } from "./brasserie";
 import { TypeDeBiere } from "./type-de-biere";
 
-export class Biere {
-    public id?: number;
+export class Biere extends BaseEntity {
     public libelle?: string;
     public typeDeBiere?: TypeDeBiere;
     public brasserie?: Brasserie;

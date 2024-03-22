@@ -66,9 +66,9 @@ export class CreateUpdateBrasserieComponent implements OnInit {
     Object.assign(this._brasserie, this.formGroup?.value);
 
     if (this._brasserie.id == null) {
-      this.brasseriesService.createBrasserie(this._brasserie);
+      this.brasseriesService.create(this._brasserie);
     } else {
-      this.brasseriesService.updateBrasserie(this._brasserie);
+      this.brasseriesService.update(this._brasserie);
     }
 
     if (this.activeModal) {

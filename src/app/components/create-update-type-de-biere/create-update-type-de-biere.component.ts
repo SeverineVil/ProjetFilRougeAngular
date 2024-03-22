@@ -19,7 +19,7 @@ export class CreateUpdateTypeDeBiereComponent {
     private activatedRoute: ActivatedRoute) {
     const id: string = this.activatedRoute.snapshot.params['id'];
     this.typeDeBiere =
-      this.typeDeBiereService.getTypeDeBiereById(parseInt(id)) ?? new TypeDeBiere();
+      this.typeDeBiereService.getItemById(parseInt(id)) ?? new TypeDeBiere();
   }
 
   public get isInCreation(): boolean {
@@ -28,8 +28,8 @@ export class CreateUpdateTypeDeBiereComponent {
 
   public saveForm(): void {
     const success: boolean = this.isInCreation ?
-      this.typeDeBiereService.createTypeDeBiere(this.typeDeBiere) :
-      this.typeDeBiereService.updateTypeDeBiere(this.typeDeBiere);
+      this.typeDeBiereService.create(this.typeDeBiere) :
+      this.typeDeBiereService.update(this.typeDeBiere);
 
     // Redirection de l'utilisateur vers la liste des types de bière
     this.router.navigateByUrl('types-de-biere');

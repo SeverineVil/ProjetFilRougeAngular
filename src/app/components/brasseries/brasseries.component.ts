@@ -18,7 +18,7 @@ export class BrasseriesComponent {
   public brasseries: Brasserie[];
 
   constructor(private brasseriesService: BrasserieService, private ngbModal: NgbModal) {
-    this.brasseries = brasseriesService.getAllBrasseries()
+    this.brasseries = brasseriesService.getAllItems()
   }
 
   public createBrasserie(): void {
@@ -36,6 +36,6 @@ export class BrasseriesComponent {
   }
 
   public deleteBrasserie(brasserie: Brasserie): void {
-    this.brasseriesService.deleteBrasserie(brasserie)
+    this.brasseriesService.delete(brasserie)
   }
 }
