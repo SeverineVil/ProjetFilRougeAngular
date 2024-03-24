@@ -1,0 +1,17 @@
+<div class="home-container">
+  <div class="logo-container"></div>
+  <form (submit)="onLogin()" class="login-container">
+    <img src=".\assets\logo.png" alt="logo" />
+    <input type="text" name="identifiant" [(ngModel)]="logObj.identifiant" />
+    <label class="form-label" for="form2Example11">Identifiant</label>
+
+    <input type="password" name="mdp" [(ngModel)]="logObj.mdp" />
+    <label class="form-label" for="form2Example22">Mot de passe</label>
+
+    <div class="text-center pt-1 mb-5 pb-1">
+      <button class="login-btn" type="submit">
+        Connexion
+      </button>
+    </div>
+  </form>
+</div>

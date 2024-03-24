@@ -1,6 +1,0 @@
-<!-- value = {{ value }} -->
-<mat-slider (mouseover)="sliderMouseOvered()" (click)="sliderClicked()" [discrete]="showLabel" [min]="minSliderValue"
-    [max]="maxSliderValue">
-    <!-- $event c'est le nom de la variable émise par l'output "ngModelChange" de l'input  -->
-    <input matSliderThumb [(ngModel)]="sliderValue" (ngModelChange)="sliderValueHasChanged()">
-</mat-slider>
