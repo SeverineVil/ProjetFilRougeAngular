@@ -13,12 +13,7 @@ import { IMenuRoute } from './menu-route';
 export class NavbarComponent {
 
   public menuRoutes: IMenuRoute[] = [
-    { path: 'hello-world', libelle: 'Hello World' },
-    { path: 'exercices', libelle: 'Exercices' },
-    { path: 'types-de-biere', libelle: 'Types de bières' },
-    { path: 'brasseries', libelle: 'Brasseries' },
-    { path: 'pokedex', libelle: 'Pokédex' },
-    { path: 'angular-17-features', libelle: 'Angular 17 features' },
-    { path: 'bieres', libelle: 'Bières' }
+    { path: 'hello-world', libelle: 'log out' },
+  
   ]
 }
