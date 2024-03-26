@@ -1,0 +1,48 @@
+body {
+  background-color: #f5f5f5; /* Utilisation d'un blanc légèrement teinté */
+}
+
+h1 {
+  color: #333; /* Couleur de texte sombre */
+  background-color: IndianRed; /* Fond du titre IndianRed */
+  padding: 10px; /* Espace autour du titre */
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid IndianRed; /* Bordures utilisant IndianRed */
+}
+
+button {
+  background-color: IndianRed; /* Boutons utilisant IndianRed */
+  color: #fff; /* Texte blanc */
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Animation de transition */
+}
+
+button:hover {
+  background-color: #b30000; /* Légère variation de couleur au survol */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.order-list li {
+  background-color: rgba(205, 92, 92, 0.9); /* IndianRed avec une opacité */
+  padding: 8px;
+}
+
+.menu li {
+  background-color: rgba(205, 92, 92, 0.7); /* IndianRed avec une opacité */
+  padding: 8px;
+}
