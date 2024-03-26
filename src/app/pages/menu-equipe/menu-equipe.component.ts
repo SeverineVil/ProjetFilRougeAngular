@@ -14,7 +14,7 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 export class MenuEquipeComponent {
 
   public menuRoutes: IMenuRoute[] = [
-    { path: 'accueil clients', libelle: 'ACCUEIL CLIENTS' },
+    { path: 'accueil-clients', libelle: 'ACCUEIL CLIENTS' },
     { path: 'reservation', libelle: 'RESERVATIONS' },
     { path: 'service', libelle: 'SERVICE' },
     { path: 'cuisine', libelle: 'CUISINE' },
