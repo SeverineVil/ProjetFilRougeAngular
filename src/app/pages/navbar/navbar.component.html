@@ -1,12 +1,13 @@
 <nav class="nav-container">
     <div class="previous-arrow">
-        <i class="fa-solid fa-arrow-left"></i>
+        <i (click)="goBack()" class="fa-solid fa-arrow-left"></i>
     </div>
 <div class="bird-container">
     <img src="./assets/logoBird.png" alt="oiseau">
 </div>
 <div class="logout-logo">
-    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    <button (click)="logout()" type="button" class="btn"><i
+        class="fas fa-power-off me-1"></i></button>
 </div>
 
 </nav>

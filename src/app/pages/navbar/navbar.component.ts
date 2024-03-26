@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IMenuRoute } from './menu-route';
-
+import { Location } from '@angular/common';
+import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -16,4 +17,15 @@ export class NavbarComponent {
     { path: 'hello-world', libelle: 'log out' },
   
   ]
+
+  constructor(private location: Location, private loginService: LoginService){}
+
+  public goBack(): void {
+    this.location.back();
+  }
+
+  public logout(): void {
+    this.loginService.logout();
+  }
+
 }
