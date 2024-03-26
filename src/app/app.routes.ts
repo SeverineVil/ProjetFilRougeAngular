@@ -6,5 +6,6 @@ import {CaisseComponent} from "./pages/caisse/caisse.component";
 export const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'menu-equipe', component: MenuEquipeComponent },
-  {path:'menu-equipe/caisse', component: CaisseComponent}
+  {path:'menu-equipe/caisse', component: CaisseComponent},
+
 ];
