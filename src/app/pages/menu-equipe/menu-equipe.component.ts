@@ -27,9 +27,4 @@ export class MenuEquipeComponent {
 
   constructor() {
   }
-
-
-  public navigateTo() {
-
-  }
 }
