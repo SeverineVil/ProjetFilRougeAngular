@@ -1,0 +1,17 @@
+.container-fluid{
+  resize: horizontal;
+  overflow: hidden;
+  display: flex;
+  margin-top: 10rem;
+
+}
+.card-body{
+  display: inline-block;
+  margin: 8px;
+  background-color: rgba(205, 92, 92, 0.2);
+  border: 2px solid indianred;
+  border-radius: 10px ;
+  height: 20rem;
+  width: 20rem;
+  font-size: xx-large;
+}
