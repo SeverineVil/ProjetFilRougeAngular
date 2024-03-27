@@ -12,6 +12,6 @@ export const routes: Routes = [
   {path:'menu-equipe/caisse', component: CaisseComponent},
   {path:'menu-equipe/cuisine', component: CuisineComponent},
   {path:'menu-equipe/accueil-clients', component: AccueilClientsComponent},
-  {path:'menu-equipe/reservation', component: ReservationComponent}
+  {path:'reservation', component: ReservationComponent}
 
 ];
