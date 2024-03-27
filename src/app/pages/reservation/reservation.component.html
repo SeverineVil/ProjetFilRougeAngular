@@ -16,7 +16,7 @@
           <div  class="plat-tile shadow btn btn-secondary"
               *ngFor="let reservation of reservations">
               <div class="identifier small">N°{{ reservation.id }}</div>
-              <div class="identifier small">N°{{ reservation.id_client }}</div>
+              <div class="identifier small">N°{{ reservation.client.nom }}</div>
               <div class="identifier small">{{ reservation.dateReservation }}</div>
               <div class="identifier small">{{ reservation.heureReservation }}</div>
               <div class="identifier small">{{ reservation.etatReservation }} </div>
