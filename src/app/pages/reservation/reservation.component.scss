@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif; /* Police de caractères par défaut */
+  margin: 0; /* Suppression des marges par défaut */
+  padding: 0; /* Suppression des marges internes par défaut */
+  background-color: #f5f5f5; /* Couleur de fond légèrement teintée */
+}
+
+header {
+  background-color: IndianRed; /* Fond de l'en-tête en IndianRed */
+  color: white; /* Texte en blanc */
+  text-align: center; /* Centrage du texte */
+  padding: 20px 0; /* Espacement interne de l'en-tête */
+}
+
+h1, h2 {
+  margin: 0; /* Suppression des marges pour les titres */
+}
+
+main {
+  padding: 20px; /* Espacement interne pour le contenu principal */
+}
+
+.reservations {
+  background-color: white; /* Fond blanc pour la section des réservations */
+  padding: 20px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.reservations h2 {
+  margin-top: 0; /* Suppression de la marge supérieure pour le titre */
+}
+
+#reservationList {
+  list-style-type: none; /* Suppression des puces de liste */
+  padding: 0; /* Suppression des marges internes de la liste */
+}
+
+#reservationList li {
+  margin-bottom: 10px; /* Espacement vertical entre les éléments de liste */
+  padding: 10px; /* Espacement interne */
+  background-color: #f9f9f9; /* Fond légèrement teinté pour les réservations */
+  border-radius: 4px; /* Coins arrondis */
+}
