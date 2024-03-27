@@ -6,11 +6,28 @@
 </header>
 
 <main>
-  <section class="reservations">
+  <section class="reservations"  >
+    
     <h2>Réservations du jour</h2>
-    <ul id="reservationList">
-      <!-- Les réservations du jour seront ajoutées ici dynamiquement -->
-    </ul>
+    <ng-container *ngIf="_reservations$ | async as reservations">
+ 
+     
+      <div class="d-flex flex-row flex-wrap gap-2 m-2">
+          <div  class="plat-tile shadow btn btn-secondary"
+              *ngFor="let reservation of reservations">
+              <div class="identifier small">N°{{ reservation.id }}</div>
+              <div class="identifier small">N°{{ reservation.id_client }}</div>
+              <div class="identifier small">{{ reservation.dateReservation }}</div>
+              <div class="identifier small">{{ reservation.heureReservation }}</div>
+              <div class="identifier small">{{ reservation.etatReservation }} </div>
+              <div class="identifier small">{{ reservation.tailleGroupe }}</div>
+             
+             
+          </div>
+      </div>
+  </ng-container>
+
+
   </section>
 </main>
 

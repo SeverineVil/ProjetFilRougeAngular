@@ -6,31 +6,35 @@ import { StorageService } from './storage.service';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
-
   private static readonly _tokenStorageKey = 'token';
 
-  constructor(private HttpClient: HttpClient, private storageService: StorageService, private router: Router) { }
+  constructor(
+    private HttpClient: HttpClient,
+    private storageService: StorageService,
+    private router: Router
+  ) {}
 
-  public login(user: Users){
-       let params = new HttpParams()
+  public login(user: Users) {
+    const params = new HttpParams()
       .set('username', user.identifiant)
       .set('password', user.mdp);
 
-  
-
-  return this.HttpClient.post<any>('http://localhost:8080/login', {}, { params }).pipe(
-      map(response => {
-        console.log("Token du user :", response.token);
+    return this.HttpClient.post<any>(
+      'http://localhost:8080/login',
+      {},
+      { params }
+    ).pipe(
+      map((response) => {
+        console.log('Token du user :', response.token);
         const token = response.token;
-      
+
         this.storageService.set(LoginService._tokenStorageKey, token);
         return token;
       })
-    ); 
+    );
   }
 
   public interceptToken(): string | null {
