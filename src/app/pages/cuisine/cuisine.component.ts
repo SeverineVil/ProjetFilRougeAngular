@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-cuisine',
@@ -8,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './cuisine.component.scss'
 })
 export class CuisineComponent {
+
+  @Input()
+  private platAenvoyer?: string;
+
+
+
+
+  public cestPret(): boolean{
+
+
+    return false;
+}
+
+
+
 
 }
