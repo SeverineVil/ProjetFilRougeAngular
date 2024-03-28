@@ -1,0 +1,14 @@
+<ng-container *ngIf="_plats$ | async as plats">
+
+    {{ plats.length }} Plat(s) trouvé(s)
+    <div class="d-flex flex-row flex-wrap gap-2 m-2">
+        <div (click)="ajouterPlatCommande(plat)" class="plat-tile shadow btn btn-secondary"
+            *ngFor="let plat of plats">
+            <div class="identifier small">N°{{ plat.id }}</div>
+            <div class="fw-bold">{{ plat.nom }}</div>
+            <div class="fw-bold">{{ plat.descriptionPlat }}</div>
+            <div class="fw-bold">{{ plat.prix }} €</div>
+            
+        </div>
+    </div>
+</ng-container>
