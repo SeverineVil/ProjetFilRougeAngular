@@ -1,28 +1,24 @@
 
 <body>
-
 <header>
   <h1>Écran de Cuisine</h1>
 </header>
-
 <main>
   <section class="orders">
     <h2>Commandes en cours</h2>
-    <!-- Liste des commandes en cours -->
-    <ul>
-      <!-- Exemple d'un élément de commande -->
-      <li>
-        <span>Table 1</span>
-        <span>Pizza Margherita</span>
-        <button onclick="prepareOrder(this)">Prêt</button>
-      </li>
-      <!-- Vous pouvez remplir cette liste dynamiquement avec JavaScript -->
-    </ul>
+    <div *ngFor="let commande of  commandes$ | async">
+      <ul>
+        <li>{{commande.id}}</li>
+        <li>{{commande.idClient}}</li>
+        <li>{{commande.idTable}}</li>
+        <li>{{commande.idPlats}}</li>
+        <li>{{commande.etatCommande}}</li>
+        <li>{{commande.montant}}</li>
+      </ul>
+      <button (click)="modifStatut('PRETE', commande.id!, commande)">{{commande.etatCommande}}</button>
+    </div>
   </section>
 </main>
-
-<!-- Inclure vos scripts JavaScript ici -->
-
 </body>
 
 
