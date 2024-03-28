@@ -27,4 +27,15 @@ img {
 .logo-container,
 .login-container {
   flex-grow: 1; 
+
+}
+
+.login-container label {
+  font-size: 0.8rem;
+}
+
+.login-container input {
+  width: 95vw;
+  height: 5vh;
+  
 }

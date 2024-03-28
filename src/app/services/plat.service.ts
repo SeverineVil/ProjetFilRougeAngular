@@ -70,14 +70,16 @@ export class PlatService {
     )
   }
 
-  public ajouterPlatCommande(plat: Plat ): Observable<void> {
+  public ajouterPlatCommande(plat: Plat ): void {
 
     const params = new HttpParams()
     .set('id_commande', this.commandeOuverte.id!)
     .set('id_plat', plat.id);
 
     
-    return this.httpClient.put<void>('http://localhost:8080/plats/id',{},{params: params});
+    this.httpClient.put<void>('http://localhost:8080/commandes/id',{},{params: params}).subscribe(
+      
+    );
 
   }
 }

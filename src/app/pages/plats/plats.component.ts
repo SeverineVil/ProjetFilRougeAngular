@@ -27,7 +27,7 @@ constructor(private platService : PlatService) {
 }
 
 public ajouterPlatCommande(plat: Plat) {
-  return this.platService.ajouterPlatCommande(plat)
+this.platService.ajouterPlatCommande(plat)
 }
 
 }
