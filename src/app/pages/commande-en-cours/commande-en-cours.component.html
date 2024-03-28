@@ -1,0 +1,22 @@
+
+<ng-container *ngIf="_commande$ | async as commande">
+
+    Test
+
+    <div class="d-flex flex-row flex-wrap gap-2 m-2">
+        <div class="plat-tile shadow btn btn-secondary">
+            <div class="identifier small">Commande N°{{commande.id}}</div>
+            <div class="fw-bold">Etat de la commande {{commande.etatCommande}}</div>
+            <div class="fw-bold">Table n°{{commande.idTable}}</div>
+            <div class="d-flex flex-row flex-wrap gap-2 m-2">
+
+            <!-- <div *ngSwitch="plat.categorie = ENTREE">     -->
+            <div *ngFor="let plat of commande.plats" class="fw-bold">
+                <p>{{plat.nom}}</p>
+                <p> {{plat.prix}} € </p>
+            </div>   
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</ng-container>

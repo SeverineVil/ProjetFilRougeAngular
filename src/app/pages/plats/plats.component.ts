@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Plat, Plats } from '../../entities/plat';
 import { PlatService } from '../../services/plat.service';
 import { Commande, Commandes } from '../../entities/commande';
+import { CommandeService } from '../../services/commande.service';
 
 @Component({
   selector: 'app-plats',
@@ -14,20 +15,27 @@ import { Commande, Commandes } from '../../entities/commande';
 })
 export class PlatsComponent {
 
-  public _plats$: Observable<Plat[]>;
-  public _commandes$: Observable<Commandes>;
 
-constructor(private platService : PlatService) {
-  this._plats$ = platService.getAllPlats();
+  public commandeId: number | null = null;
+  public _plats$?: Observable<Plat[]>;
+  public _commandes$?: Observable<Commandes>;
+
+constructor(private platService : PlatService, private commandeService : CommandeService) {
+
+}
+
+ngOnInit(): void {
+  this._plats$ = this.platService.getAllPlats();
   this._plats$.subscribe(p=>console.log(p));
-  this._commandes$ = platService.getAllCommandes();
+  this._commandes$ = this.commandeService.getAllCommandes();
   this._commandes$.subscribe(p=>console.log(p));
-
-  this.platService.ouvertureCommande();
+  this.commandeService.commandeId$.subscribe(id => {
+    this.commandeId = id;
+  });
 }
 
 public ajouterPlatCommande(plat: Plat) {
-this.platService.ajouterPlatCommande(plat)
+this.commandeService.ajouterPlatCommande(plat)
 }
 
 }
