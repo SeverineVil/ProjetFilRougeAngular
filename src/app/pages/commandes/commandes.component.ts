@@ -25,7 +25,8 @@ export class CommandesComponent {
       this.route.params.subscribe(params => {
         this.commandeId = +params['id']; 
         this.commandeService.getCommandeById(this.commandeId)?.subscribe(
-          (commande) => {this.commande = commande;},
+          (commande) => {this.commande = commande;
+          this.setCommandeId(commande.id!)},
         );
       });
     }

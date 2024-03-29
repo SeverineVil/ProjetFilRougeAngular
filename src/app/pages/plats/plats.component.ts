@@ -1,10 +1,10 @@
-import { AsyncPipe, CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Plat, Plats } from '../../entities/plat';
-import { PlatService } from '../../services/plat.service';
-import { Commande, Commandes } from '../../entities/commande';
+import { Commandes } from '../../entities/commande';
+import { Plat } from '../../entities/plat';
 import { CommandeService } from '../../services/commande.service';
+import { PlatService } from '../../services/plat.service';
 
 @Component({
   selector: 'app-plats',
