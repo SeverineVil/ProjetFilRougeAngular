@@ -6,6 +6,8 @@ import { CaisseComponent } from './pages/caisse/caisse.component';
 import { CuisineComponent } from './pages/cuisine/cuisine.component';
 import { AccueilClientsComponent } from './pages/accueil-clients/accueil-clients.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { TablesComponent } from './tables/tables.component';
+
 
 
 export const routes: Routes = [
@@ -16,5 +18,7 @@ export const routes: Routes = [
   { path: 'menu-equipe/cuisine', component: CuisineComponent },
   { path: 'menu-equipe/accueil-clients', component: AccueilClientsComponent },
   { path: 'menu-equipe/reservation', component: ReservationComponent },
+  { path: 'menu-equipe/reservation/tables', component: TablesComponent },
+  { path: 'menu-equipe/reservation/tables/:id', component: TablesComponent },
 ];
 

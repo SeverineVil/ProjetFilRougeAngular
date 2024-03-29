@@ -1,0 +1,22 @@
+<main>
+  <section class="tables">
+    <h2>Statut des tables :</h2>
+    
+    <div class="reservation-info" *ngIf="resaId !== undefined">
+      <div class="identifier small">ID de la réservation associée : {{ resaId }}</div>
+    </div>
+
+    <ng-container *ngIf="_table$ | async as tables">
+      <div class="d-flex flex-column gap-2 m-2">
+        <div class="plat-tile shadow" *ngFor="let table of tables">
+          <div class="identifier small">N° de table : {{ table.numero}}</div>
+          <div class="identifier small">Places : {{ table.nombrePlaces }}</div>
+          <div class="identifier small">Statut : {{ table.etat }}</div>
+          <div class="button-container">
+            <button class="btn-affecterTable" >Affecter</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+</main>
