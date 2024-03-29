@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {PlatService} from "./plat.service";
 import {Commande} from "../entities/commande";
 import {Observable} from "rxjs";
+import {CommandeService} from "./commande.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class CuisineService {
 
 
 
-  constructor(private httpClient: HttpClient, private platCommandeService : PlatService) {
-    this.platCommandeService.getAllCommandes();
+  constructor(private httpClient: HttpClient, private service : CommandeService) {
+    this.service.getAllCommandes();
   }
 
   public modifierStatutCommande(statut: string, id: number): Observable<Commande> {

@@ -5,6 +5,8 @@ import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {PlatService} from "../../services/plat.service";
 import {Commande, Commandes} from "../../entities/commande";
 import {FormsModule} from "@angular/forms";
+import {CommandeService} from "../../services/commande.service";
+import {EcranCommandeComponent} from "../../Component/ecran-commande/ecran-commande.component";
 
 @Component({
   selector: 'app-cuisine',
@@ -13,7 +15,8 @@ import {FormsModule} from "@angular/forms";
     NgForOf,
     AsyncPipe,
     NgIf,
-    FormsModule
+    FormsModule,
+    EcranCommandeComponent
   ],
   templateUrl: './cuisine.component.html',
   styleUrl: './cuisine.component.scss'
@@ -23,8 +26,8 @@ export class CuisineComponent {
   public commandes$: Observable<Commande[]>;
 
 
-  constructor(private cuisineService: CuisineService, private platService: PlatService) {
-    this.commandes$ = this.platService.getAllCommandes();
+  constructor(private cuisineService: CuisineService, private service: CommandeService) {
+    this.commandes$ = this.service.getAllCommandes();
 
   }
 

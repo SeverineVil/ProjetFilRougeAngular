@@ -1,17 +1,19 @@
 
 <body>
+<h1>Commandes</h1>
+<app-ecran-commande></app-ecran-commande>
 <header>
-  <h1>Écran de Cuisine</h1>
+  <h1>Cuisine</h1>
 </header>
 <main>
   <section class="orders">
-    <h2>Commandes en cours</h2>
+    <h2>Commandes prête</h2>
     <div *ngFor="let commande of  commandes$ | async">
       <ul>
         <li>{{commande.id}}</li>
         <li>{{commande.idClient}}</li>
         <li>{{commande.idTable}}</li>
-        <li>{{commande.idPlats}}</li>
+        <li>{{commande.plats}}</li>
         <li>{{commande.etatCommande}}</li>
         <li>{{commande.montant}}</li>
       </ul>
