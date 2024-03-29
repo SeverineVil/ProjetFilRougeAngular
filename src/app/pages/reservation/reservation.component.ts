@@ -3,6 +3,7 @@ import { Reservation } from '../../entities/reservations';
 import { ReservationService } from '../../services/reservation.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class ReservationComponent implements OnInit {
   public _reservations$?: Observable<Reservation[]>;
 
-  constructor(private reservationService: ReservationService) {}
+  constructor(private reservationService: ReservationService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllReservations();
@@ -24,4 +25,15 @@ export class ReservationComponent implements OnInit {
   getAllReservations(): void {
     this._reservations$ = this.reservationService.getAllResa();
   }
+  
+  acceptResa(reservationId: number): void {  
+    console.log('Réservation acceptée avec succès !',{reservationId});
+    this.router.navigate(['menu-equipe/reservation/tables', reservationId]);
+  }
+
+  refuseResa(reservationId: number): void {   
+    console.log('Réservation refusée avec succès !');
+  }
 }
+
+ 

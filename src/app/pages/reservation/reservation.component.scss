@@ -1,29 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif; 
-  margin: 0; 
-  padding: 0; 
-  background-color: #f5f5f5; 
+ 
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
 header {
-  background-color: IndianRed; 
-  color: white; 
-  text-align: center; 
-  padding: 20px 0; 
+  background-color: IndianRed;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
-h1, h2 {
-  margin: 0; 
+h1,
+h2 {
+  margin: 0;
 }
 
 main {
-  padding: 20px; 
+  padding: 20px;
 }
 
-.card-body {
-  background-color: white; 
-  padding: 20px; 
-  border-radius: 8px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+.reservations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
+.plat-tile {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.identifier {
+  margin-bottom: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.accept-button,
+.refuse-button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.accept-button {
+  background-color: MediumSeaGreen;
+  color: white;
+}
+
+.refuse-button {
+  background-color: Tomato;
+  color: white;
+}
+
+.accept-button:hover,
+.refuse-button:hover {
+  opacity: 0.8;
+}

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IMenuRoute } from './menu-route';
 import { Location } from '@angular/common';
 import { LoginService } from '../../services/login.service';
 @Component({
@@ -13,10 +12,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavbarComponent {
 
-  public menuRoutes: IMenuRoute[] = [
-    { path: 'hello-world', libelle: 'log out' },
-  
-  ]
+ 
 
   constructor(private location: Location, private loginService: LoginService){}
 
