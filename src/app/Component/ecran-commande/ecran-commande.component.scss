@@ -1,0 +1,32 @@
+.card {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.card li:last-child {
+  margin-bottom: 0;
+}
+
+.card span {
+  display: inline-block;
+  margin-right: 8px;
+}

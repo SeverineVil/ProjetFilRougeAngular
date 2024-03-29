@@ -1,0 +1,12 @@
+<div *ngFor="let commande of commandes$ | async" class="card" >
+  <ul >
+    <li>{{ commande.id }}</li>
+    <li>{{ commande.idClient }}</li>
+    <li>{{ commande.idTable }}</li>
+    <li>
+      <span *ngFor="let plat of commande.plats">{{ plat.nom }},</span>
+    </li>
+    <li>{{ commande.etatCommande }}</li>
+    <li>{{ commande.montant }}</li>
+  </ul>
+</div>
